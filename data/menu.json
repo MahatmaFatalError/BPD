@@ -1,0 +1,22 @@
+{name:"Szenarien",
+ items:[
+ 	{
+ 	 name:"Szenario 1",
+	 items:[
+		{"name":"Travel Management", leaf: true},
+		{"name":"Payroll", leaf: true},
+		{"name":"Order-to-Cash", leaf: true},
+		{"name":"Purchase-to-Pay", leaf: true}
+	]},{
+	 name:"Szenario 2",
+	 items:[
+		{"name":"Prozess 1", leaf: true},
+		{"name":"Prozess 2", leaf: true}
+	]},{
+	name:"Szenario 3",
+		 items:[
+			{"name":"Prozess 1", leaf: true},
+			{"name":"Prozess 2", leaf: true},
+			{"name":"Prozess 3", leaf: true}
+	]}
+]}
