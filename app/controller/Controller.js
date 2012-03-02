@@ -76,10 +76,9 @@ Ext.define('MyApp.controller.Controller', {
     
     onLeafItemTap: function(target, record){
     	console.log('Leaf item tapped');
-    	var title = this.getWelcomeTitle();
-    	
-    	title.setTitle(record.name)
-    	//title.setTitle('test');
+    	//var title = this.getWelcomeTitle();
+		console.log(record.get('name'));		//warum geht das net!?!??!
+
     	
     }
     

@@ -1,4 +1,4 @@
-Ext.define('MyApp.view.Viewport', {     //Todo: viewport in Senchacon video1 checken --> keine navigation.View mehr!!!
+Ext.define('MyApp.view.Viewport', {     //Todo: viewport in Senchacon video1 checken --> ggf durch Ext.navigation.View ersetzen!!!
     extend: 'Ext.Panel',
  	xtype: 'Viewport',			// unsicher
  

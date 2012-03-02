@@ -36,7 +36,11 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
 	                    iconCls: 'settings',
 	                    iconMask: true
                 	}]
-                }]
+                },
+                {
+                	
+                }               
+                ]
                 
             
             },

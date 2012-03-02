@@ -14,6 +14,9 @@ Ext.define('MyApp.store.SystemStore', {
             reader: {
                 type: 'json'
                 
+            }, 
+            writer: {
+            	type: 'json'
             }
         },
         

@@ -5,7 +5,17 @@ Ext.define('MyApp.model.Menu', {
             {
                 name: 'name'
             }
-        ]
+        ],
+    
+    
+    	// ==> BelongsTo Association
+    	//belongsTo:[{},{}],
+    
+    
+   		// ==> HasOne oder HasMany Association
+    	//hasMany:{}
+    
+    
     },
     
     //getSelectedItem: function(){
