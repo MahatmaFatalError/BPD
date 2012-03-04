@@ -18,7 +18,10 @@ Ext.define('MyApp.model.Menu', {
     
     },
     
-    //getSelectedItem: function(){
-    //	return this.data.name;
-    //}
+    getSelectedItem: function(){
+    	var temp = this.data,
+    	item = [temp.name];
+    	
+    	return item.join("");
+    }
 });

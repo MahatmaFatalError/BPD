@@ -1,12 +1,12 @@
 Ext.define('MyApp.store.MenuStore', {
-    extend: 'Ext.data.TreeStore',
+    extend: 'Ext.data.Store',
 //    requires: 'MyApp.Model.Main',
     
     config: {
         model: 'MyApp.model.Menu',
         storeId: 'MenuStore',
         autoLoad: true,
-        defaultRootProperty: 'items',   //default?
+        //defaultRootProperty: 'items',   //default?
         
         proxy:{
             type: 'ajax',
@@ -16,7 +16,7 @@ Ext.define('MyApp.store.MenuStore', {
                 type: 'json'
                 
             }
-        },
+        }
         
     }
 });

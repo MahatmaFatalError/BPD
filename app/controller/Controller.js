@@ -38,7 +38,7 @@ Ext.define('MyApp.controller.Controller', {
             },
             
             Menu:{
-            	leafitemtap: 'onLeafItemTap'
+            	itemtap: 'onItemTap'
             }
             
             
@@ -74,10 +74,14 @@ Ext.define('MyApp.controller.Controller', {
         //todo popup
     },
     
-    onLeafItemTap: function(target, record){
-    	console.log('Leaf item tapped');
+    onItemTap: function(record){
+    	console.log('item tapped');
+
+    	console.log(record.getSelectedItem());		//record ist wichtig
+
+    	//this.getWelcomeTitle.setTitle(record.getSelectedItem());
     	//var title = this.getWelcomeTitle();
-		console.log(record.get('name'));		//warum geht das net!?!??!
+		//console.log(this.getMenu().getTitle());		//warum geht das net!?!??!
 
     	
     }
