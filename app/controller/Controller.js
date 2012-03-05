@@ -5,17 +5,24 @@ Ext.define('MyApp.controller.Controller', {
     
     //models:[],
     //views:[];
-    
+    views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer'],
     
     config: {
         refs:{
             //todo
-            	nav: '.Viewport',
-                settingsButton: '#SettingBtn',
+            	Nav: '.Viewport',
+                SettingsButton: '#SettingBtn',
                 AddSystemButton: '#AddSystemBtn',
                 HomeButton: '#HomeBtn',
                 Menu: '#SzenarioList',
                 WelcomeTitle: '#WelcomeTitle',
+                ShortScenarioDescription: '#shortScenDesc',
+                DescButton: '#DescriptionBtn',
+                SteckBriefBackButton: '#SteckbriefBackBtn',
+                TempButton: '#tempBtn',						//Temp
+                
+                
+                
                                 // Components can be retrieved by using their xtype with an optional . prefix   .gridpanel
                                 // An itemId or id must be prefixed with a #                                    #myContainer
                                 // Attributes must be wrapped in brackets                                       panel[title="Test"]
@@ -26,7 +33,7 @@ Ext.define('MyApp.controller.Controller', {
         
         control:{
             //todo
-            settingsButton:{
+            SettingsButton:{
                 tap: 'goSettings'
             },
             AddSystemButton:{
@@ -39,7 +46,20 @@ Ext.define('MyApp.controller.Controller', {
             
             Menu:{
             	itemtap: 'onItemTap'
+            },
+            
+            DescButton:{
+            	tap: 'onDescBtnTap'
+            },
+            
+            SteckBriefBackButton:{
+            	tap: 'onSteckbriefBackBtnTap'
+            },
+            
+            TempButton:{				// temp
+            	tap: 'onTempBtnTap',
             }
+            
             
             
         }
@@ -74,19 +94,29 @@ Ext.define('MyApp.controller.Controller', {
         //todo popup
     },
     
-    onItemTap: function(record){
-    	console.log('item tapped');
-
-    	console.log(record.getSelectedItem());		//record ist wichtig
-
-    	//this.getWelcomeTitle.setTitle(record.getSelectedItem());
-    	//var title = this.getWelcomeTitle();
-		//console.log(this.getMenu().getTitle());		//warum geht das net!?!??!
-
+    onItemTap: function(list,index,target,record){		
+    	console.log('item tapped: ' + record.getSelectedName());
+		console.log('item tapped: ' + record.getSelectedDesc());
+    	this.getWelcomeTitle().setTitle(record.getSelectedName());
+    	this.getShortScenarioDescription().setHtml(record.getSelectedDesc());  
     	
+    	//TODO 	
+    },
+    
+    
+    onDescBtnTap: function(){
+    	console.log('DescButton tapped');
+    },
+    
+    
+    onSteckbriefBackBtnTap: function(){
+    	this.getNav().setActiveItem(0)
+    },
+    
+    onTempBtnTap:function(){
+    	debugger;
+    	this.getNav().setActiveItem(2)
     }
-    
-    
     
     
     

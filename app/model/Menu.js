@@ -4,6 +4,9 @@ Ext.define('MyApp.model.Menu', {
         fields: [
             {
                 name: 'name'
+            },
+            {
+            	name: 'desc'
             }
         ],
     
@@ -18,10 +21,19 @@ Ext.define('MyApp.model.Menu', {
     
     },
     
-    getSelectedItem: function(){
+    getSelectedName: function(){
     	var temp = this.data,
     	item = [temp.name];
     	
-    	return item.join("");
+    	return item;
+    },
+    
+    getSelectedDesc: function(){
+    	var temp = this.data,
+    	item = [temp.desc];
+    	
+    	return item;
+    
     }
+    
 });

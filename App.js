@@ -2,16 +2,18 @@ Ext.Loader.setConfig({ enabled: true });
 
 Ext.application({
     name: 'MyApp',
-    
+
 //    requieres:['MyApp.model.Menu','MyApp.store.MenuStore'],
     //    profiles: ['Tablet'];
     models:['Menu', 'System'],
     stores:['MenuStore', 'SystemStore'],
-    views:['Viewport', 'MenuContainer', 'SettingsContainer'],
+    views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer'],		//'temp'],
     controllers:['Controller'],
 
     launch: function(){
-        //debugger;
+		//debugger;
+        
+        
         Ext.create('MyApp.view.Viewport');
         
     },

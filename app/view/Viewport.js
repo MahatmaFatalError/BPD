@@ -12,6 +12,9 @@ Ext.define('MyApp.view.Viewport', {     //Todo: viewport in Senchacon video1 che
             },
             {
             	xtype: 'SettingsContainer'
+            },
+            {
+            	xtype: 'SteckbriefContainer',
             }
         ]
     },

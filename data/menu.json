@@ -1,9 +1,10 @@
 [
-		{"name":"Travel Management"},
-		{"name":"Payroll"},
-		{"name":"Order-to-Cash"},
-		{"name":"Purchase-to-Pay"},
-		{"name":"Customer Service"},
-		{"name":"Product Planning"},
-		{"name":"Plant Maintenance"}
+		{"name":"Travel Management", "desc": "Beschreibung von Travel Management"},
+		{"name":"Payroll", "desc": "Beschreibung von Payroll"},
+		{"name":"Order-to-Cash", "desc": "Beschreibung von Order-to-Cash"},
+		{"name":"Order-to-Cash mit Rahmenvertrag", "desc": "Beschreibung von OtC"},
+		{"name":"Purchase-to-Pay", "desc": "Beschreibung von Purchase-to-Pay"},
+		{"name":"Customer Service", "desc": "Beschreibung von Customer Service"},
+		{"name":"Product Planning", "desc": "Beschreibung von Product Planning"},
+		{"name":"Plant Maintenance", "desc": "Beschreibung von Plant Maintenance"}
 ]

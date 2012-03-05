@@ -21,7 +21,7 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
                                                 //target - the element which was tapped.                <<----===
                                                 //record - the record of the item which was tapped.
                 store: 'MenuStore',
-                displayField: 'name',
+                displayField: ['name', 'desc'],
                 itemTpl: ['{name}'],
                 id: 'SzenarioList',    
                 flex: 1,					//Titlebar hat er utomatisch erkannt !!!
@@ -30,23 +30,54 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
                 	docked: 'top',
                 	ui: 'light',
                 	title: 'Menu',
-                },{
-                	xtype: 'toolbar',
-                    docked: 'bottom',
-                    ui: 'light',
-                    items: [{
-	                    xtype: 'button',
+                	items:[{
+                		xtype: 'button',
+    					//docked: 'right',
+    					id: 'AddSzenarioBtn',
+    					iconCls: 'add',
+    					iconMask: true,
+    					align: 'right'
+                	},
+                	{
+                		xtype: 'button',
 	                    id: 'SettingBtn',
 	                    text: 'Settings',
 	                    iconCls: 'settings',
-	                    iconMask: true
-                	}]
-                },
-                {
-                	
-                }               
-                ]
-                
+	                    iconMask: true,
+	                    align: 'left',
+                	}
+                	]
+                },{
+                	xtype: 'container',
+                	layout: 'fit',
+                	docked: 'bottom',
+                	id: 'shortScenDesc',
+                	height: 170,
+                	borer: 10,		//??
+                	maxHeight : 170,
+                	padding: 10,
+                	style: 'background-color: #5E99CC',			// TODO: Hexafarbe 
+                	items:[{
+                		xtype: 'toolbar',
+	                    docked: 'top',
+	                    ui: 'light',
+	                    title: 'Description',
+	                    
+	                    items: [{
+		                    xtype: 'button',
+		                    id: 'DescriptionBtn',
+		                    //docked: 'right',
+		                    align: 'right',
+		                    iconCls: 'arrow_up',
+		                    iconMask: true,
+	                    
+                		}]},
+                		
+                		{
+                			//Textpane einabauen --> obsolet
+                		}
+                	]	             	
+                }]         
             
             },
             {
@@ -55,11 +86,17 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
                 layout: 'fit',			//??
                 
                 items: [{
-                    xtype: 'toolbar',
+                    xtype: 'titlebar',
                     id: 'WelcomeTitle',
                     docked: 'top',
                     ui: 'dark',
-                    title: 'Welcome'
+                    title: 'Welcome',
+                    items: [{				//behilfs Button
+                    	xtype: 'button',	//behilfs Button
+                    	id: 'tempBtn',
+                    	text: 'hier gehts zum Steckbrief',
+                    	                    	
+                    }]
                 }]
             }
         
