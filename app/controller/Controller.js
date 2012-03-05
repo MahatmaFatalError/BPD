@@ -114,7 +114,7 @@ Ext.define('MyApp.controller.Controller', {
     },
     
     onTempBtnTap:function(){
-    	debugger;
+    	//debugger;
     	this.getNav().setActiveItem(2)
     }
     

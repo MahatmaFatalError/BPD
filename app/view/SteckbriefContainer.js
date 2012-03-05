@@ -8,9 +8,11 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
             type: 'fit'
         },
         items:[{
+           
             xtype: 'titlebar',
             id: 'SNPSteckbriefTitle',
-            ui: 'light', 
+            ui: 'dark', 
+            docked: 'top',
             items:[{
             	xtype: 'button',
             	id: 'SteckbriefBackBtn',
@@ -21,26 +23,40 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
             
             }]},
             {
-            	xtype: 'carousel',
-            	//fullscreen: true,
-            	scrollable: true,
-            	items:[{		//Carousel card 1
+            	//xtype: 'carousel',
+            	xtype: 'tabpanel',
+				ui: 'dark',
+				tabBar:{
+		            docked: 'bottom', 
+		            layout:{
+		                pack: 'center', // this will center the menu
+		            }
+		        },
+				
+            	//flex: 1,
+            	items:[{	
+            		title: 'SNP Process Building Block Overview',								//Carousel card 1
             		xtype: 'container',
+            		scrollable: true,
             		items:[{
             			xtype: 'label',
             			id: 'SNPDefinitionLabel',
     					html: 'Short definition: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla',
-    					padding: 10,
+    					padding: 15,
             		},
             		{
             			xtype: 'label',
             			id: 'SNPDescriptionLabel',
-    					html: 'Short definition: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blab',
-    					padding: 10,
+    					html: 'Short description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam ',
+    					padding: 15,
             		},
             		{
             			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
 				        title: 'Process Steps',
+				        //padding: 10,
+				        margin: 15,
+				        //border: 30,
+				        
 				        items: [
 				            {
 				                xtype: 'textareafield',
@@ -67,11 +83,13 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
 				                name: 'fourth'
 				            }
 				        ]
+            		
             		},
             		
             		{
             			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln! + Save while typing
 				        title: 'KPI',
+				        margin: 15,
 				        items: [
 				            {
 				                xtype: 'textfield',
@@ -95,10 +113,10 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
 				            }
 				        ]
             		},
-            		
             		{
             			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln! + Save while typing
 				        title: 'Input',
+				        margin: 15,
 				        items: [
 				            {
 				                xtype: 'textfield',
@@ -117,6 +135,7 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
             		{
             			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln! + Save while typing
 				        title: 'Output',
+				        margin: 15,
 				        items: [
 				            {
 				                xtype: 'textfield',
@@ -131,52 +150,79 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
 
 				        ]
             			
-            		}
-            		]
-            	
-            	},
-            	{
-            		//Carousel card2
+            		}            		
+        		
+        		]
+        		
+				},
+				
+				{
+            													//Carousel card2
             		xtype: 'container',
-            		fullscreen: true,
+            		title: 'Customer Process Building Block Overview',
             		scrollable: true,
             		items:[{
             			xtype: 'label',
             			id: 'CustomerDefinitionLabel',
     					html: 'Short definition: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla',
-    					padding: 10,
+    					padding: 15,
             		},
             		{
             			xtype: 'label',
             			id: 'CustomerDescriptionLabel',
-    					html: 'Short definition: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla',
-    					padding: 10,
+    					html: 'Short description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam ',
+    					padding: 15,
             		
             		},
             		
             		{
-            			xtype: 'textareafield',
-            			label: 'Important steps',
+            			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
+				        title: 'Important steps',
+				        margin: 15,
+				        
+				        items:[{
+	            			xtype: 'textareafield',
+	            			margin: 15,
+	            			maxRows: 6,
+            			}]
+            		},{
+            			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
+				        title: 'Issues',
+				        margin: 15,
+				        
+				        items:[{
+	            			xtype: 'textareafield',
+	            			margin: 15,
+	            			maxRows: 6
+            			}]
+            		},{
+            			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
+				        title: 'Issues',
+				        margin: 15,
+				        
+				        items:[{
+	            			xtype: 'textareafield',
+	            			margin: 15,
+	            			maxRows: 6
+            			}]
             		
             		},{
+            			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
+				        title: 'Others',
+				        margin: 15,
+				        
+				        items:[{
             			xtype: 'textareafield',
-            			label: 'Issues',
-            		
-            		},{
-            			xtype: 'textareafield',
-            			label: 'Possible Improvements',
-            		
-            		},{
-            			xtype: 'textareafield',
-            			label: 'Others',
-            		
+	            			margin: 15,
+	            			maxRows: 6
+            			}]
             		},
             		]
             
             	}   
-        
-        	]}
-        
-        ]
+
+			]
+			}
+		]
 	}
 });
