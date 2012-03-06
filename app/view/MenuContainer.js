@@ -56,7 +56,7 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
                 	borer: 10,		//??
                 	maxHeight : 170,
                 	padding: 10,
-                	style: 'background-color: #5E99CC',			// TODO: Hexafarbe 
+                	style: 'background-color: #D3D3D3',			// TODO: Hexafarbe 
                 	items:[{
                 		xtype: 'toolbar',
 	                    docked: 'top',
@@ -67,6 +67,7 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
 		                    xtype: 'button',
 		                    id: 'DescriptionBtn',
 		                    //docked: 'right',
+		                    hidden: true,
 		                    align: 'right',
 		                    iconCls: 'arrow_up',
 		                    iconMask: true,

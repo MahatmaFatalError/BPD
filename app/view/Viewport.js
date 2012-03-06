@@ -3,9 +3,15 @@ Ext.define('MyApp.view.Viewport', {     //Todo: viewport in Senchacon video1 che
  	xtype: 'Viewport',			// unsicher
  
     config: {
-        fullscreen: true,
-        layout: 'card',
-        cardSwitchAnimation: 'slide',
+        layout: {
+	        type: 'card',
+	        animation: {
+	            type: 'fade',		//pop, fade, flip, slide
+	            //direction: 'down',
+	            //reveal: true,
+	        }
+	    },
+	    fullscreen: true,
         items: [
             {
                 xtype: 'MenuContainer' //ongoing: alle selbst erstellen Views, wie zb SettingsContainer etc
@@ -15,7 +21,11 @@ Ext.define('MyApp.view.Viewport', {     //Todo: viewport in Senchacon video1 che
             },
             {
             	xtype: 'SteckbriefContainer',
+            },
+            {
+            	xtype: 'SzenarioSteckbriefContainer',
             }
+            
         ]
     },
  

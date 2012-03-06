@@ -7,7 +7,7 @@ Ext.application({
     //    profiles: ['Tablet'];
     models:['Menu', 'System'],
     stores:['MenuStore', 'SystemStore'],
-    views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer'],		//'temp'],
+    views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer', 'SzenarioSteckbriefContainer'],		//'temp'],
     controllers:['Controller'],
 
     launch: function(){

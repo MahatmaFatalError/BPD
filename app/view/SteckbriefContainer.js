@@ -13,6 +13,7 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
             id: 'SNPSteckbriefTitle',
             ui: 'dark', 
             docked: 'top',
+            title: 'SNP Process Building Block Outline',
             items:[{
             	xtype: 'button',
             	id: 'SteckbriefBackBtn',
@@ -23,21 +24,26 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
             
             }]},
             {
-            	//xtype: 'carousel',
-            	xtype: 'tabpanel',
-				ui: 'dark',
+            	//xtype: 'carousel', ui: 'light',
+            	xtype: 'tabpanel', 
+				id:'SteckbriefTabPanel',
+				activeItem: 0,
+				
 				tabBar:{
 		            docked: 'bottom', 
 		            layout:{
 		                pack: 'center', // this will center the menu
-		            }
+		            },
 		        },
 				
             	//flex: 1,
             	items:[{	
-            		title: 'SNP Process Building Block Overview',								//Carousel card 1
+            		title: 'SNP',								//Carousel card 1
+            		iconCls: 'star',
             		xtype: 'container',
+            		id:'SNPPBBContainer',
             		scrollable: true,
+            		padding: '10, 20, 20, 10',
             		items:[{
             			xtype: 'label',
             			id: 'SNPDefinitionLabel',
@@ -159,7 +165,9 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
 				{
             													//Carousel card2
             		xtype: 'container',
-            		title: 'Customer Process Building Block Overview',
+            		iconCls: 'user',
+            		title: 'Personal',
+            		id:'CustomerPBBContainer',
             		scrollable: true,
             		items:[{
             			xtype: 'label',

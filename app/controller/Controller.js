@@ -20,8 +20,10 @@ Ext.define('MyApp.controller.Controller', {
                 DescButton: '#DescriptionBtn',
                 SteckBriefBackButton: '#SteckbriefBackBtn',
                 TempButton: '#tempBtn',						//Temp
-                
-                
+                SNPSteckbriefTitle: '#SNPSteckbriefTitle',
+                CustomerPBBContainer: '#CustomerPBBContainer',
+                SNPPBBContainer: '#SNPPBBContainer',
+                SteckbriefTabPanel: '#SteckbriefTabPanel',
                 
                                 // Components can be retrieved by using their xtype with an optional . prefix   .gridpanel
                                 // An itemId or id must be prefixed with a #                                    #myContainer
@@ -58,7 +60,10 @@ Ext.define('MyApp.controller.Controller', {
             
             TempButton:{				// temp
             	tap: 'onTempBtnTap',
-            }
+            },
+            SteckbriefTabPanel:{
+            	activeitemchange: 'onActiveitemchange',
+            },
             
             
             
@@ -100,23 +105,40 @@ Ext.define('MyApp.controller.Controller', {
     	this.getWelcomeTitle().setTitle(record.getSelectedName());
     	this.getShortScenarioDescription().setHtml(record.getSelectedDesc());  
     	
+    	this.getDescButton().setHidden(false);
+    	
     	//TODO 	
     },
     
     
     onDescBtnTap: function(){
     	console.log('DescButton tapped');
+    	this.getNav().setActiveItem(3);
     },
     
     
     onSteckbriefBackBtnTap: function(){
-    	this.getNav().setActiveItem(0)
+    	this.getNav().setActiveItem(0);
     },
     
     onTempBtnTap:function(){
     	//debugger;
-    	this.getNav().setActiveItem(2)
-    }
+    	this.getNav().setActiveItem(2);
+    	//this.getSteckbriefTabPanel().animation = {
+        //    type: 'slide',
+        //    direction: 'left'
+        //};
+    },
+    
+    onActiveitemchange:function(container, newActivePanel, oldPanel){
+
+    	if(newActivePanel.getId() == "SNPPBBContainer"){
+    		this.getSNPSteckbriefTitle().setTitle('SNP Process Building Block Outline');
+    	} else if(newActivePanel.getId() == 'CustomerPBBContainer'){
+    		this.getSNPSteckbriefTitle().setTitle('Personal Process Building Block Outline');
+    	};
+    
+    },
     
     
     
