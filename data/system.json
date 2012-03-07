@@ -1,1 +1,14 @@
-[{"name":"System1"},{"name":"System2"}]
+[
+	{
+		name: 'System1',
+		hostName: 'intern.snp.de',
+		projectName: 'Project1',
+		password: '123'
+	},
+	{
+		name: 'System2',
+		hostName: 'intern.snp.de',
+		projectName: 'Project2',
+		password: '123'
+	}, 
+]

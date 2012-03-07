@@ -1,0 +1,106 @@
+	Operation Szenariokopfdaten
+		URL: data/scenarioHeaders.json
+		Result: 
+		[
+			{ 
+				name: <name>,
+				id: <id>
+			}, ...
+		]
+
+	Operation Szenariodetails
+		URL: data/scenario.json?id=<id>
+		Result: 
+		{ 
+			name: <name>,
+			description: <long description>,
+			id: <id>,
+			definition: <short description>,
+			customer: <true or false>,
+			processModules: [
+				{
+					id: <process module id>,
+					name: <process module name>,
+					x: <process module x-position>,
+					y: <process module y-position>,
+					type: <type of process module (SAP, non-SAP)>,
+					customer: <true or false>,
+					outputs: [
+						<id of the successor process module #1>,
+						<id of the successor process module #2>,
+						...
+					]
+				}, ...
+			]
+		}
+		
+	Operation Prozessbausteine
+		URL: data/processModuleHeaders.json
+		Result:
+		[
+			{
+				name: <name of the process module area (SD, MM, FI, ...)>,
+				processModules:
+				[
+					{
+						name: <name of the process module>,
+						id: <uuid of the process module>,
+						definition: <short description>
+					}, ...
+				]
+			}
+		]
+		
+	Operation Prozessbausteindetails
+		URL: data/processModule.json?id=<id>
+		Result:
+		{
+			id: <id>,
+			name: <name>,
+			definition: <short description>,
+			customerOutline: {
+				description: <long description>,
+				steps: <import steps as text>,
+				issues: <issues as text>,
+				improvements: <improvements as text>,
+				others: <text>
+			},
+			referenceOutline: {
+				description: <long description>,
+				steps: [
+					<text1>,
+					<text2>,
+					...
+				],
+				kpis: [
+					{
+						name: <name of the kpi>,
+						unit: <unit the kpi>,
+						value: <value of the kpi>
+					}
+				],
+				inputs: [
+					<text1>,
+					<text2>,
+					...
+				],
+				outputs: [
+					<text1>,
+					<text2>,
+					...
+				]
+			}
+		}
+		
+	Operation Systeme
+		URL: data/systemHeaders.json
+		Result:
+		[
+			{
+				name: <name of the system>,
+				hostName: <host name>,
+				projectName: <name of the project>,
+				password: <password for the project>
+			}, ...
+		]
+

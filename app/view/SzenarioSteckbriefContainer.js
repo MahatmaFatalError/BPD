@@ -13,6 +13,7 @@ Ext.define('MyApp.view.SzenarioSteckbriefContainer',{         // alle Componente
 	        {
 	            docked: 'top',
 	            xtype: 'titlebar',
+	            id: 'ScenarioOutlineTitleBar',
 	            //title: 'SNP Scenario Outline',
 	            items: [{
 	            	xtype: 'button',

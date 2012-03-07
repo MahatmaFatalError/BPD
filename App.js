@@ -7,7 +7,7 @@ Ext.application({
     //    profiles: ['Tablet'];
     models:['Menu', 'System'],
     stores:['MenuStore', 'SystemStore'],
-    views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer', 'SzenarioSteckbriefContainer'],		//'temp'],
+    views:['LoginContainer', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer', 'SzenarioSteckbriefContainer', 'Viewport', ],		//'temp'],
     controllers:['Controller'],
 
     launch: function(){
@@ -18,7 +18,7 @@ Ext.application({
         
     },
     
-    autoCreateViewport: true
+    //autoCreateViewport: true
 
 
 });

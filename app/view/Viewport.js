@@ -24,14 +24,18 @@ Ext.define('MyApp.view.Viewport', {     //Todo: viewport in Senchacon video1 che
             },
             {
             	xtype: 'SzenarioSteckbriefContainer',
+            },
+            {
+            	xtype: 'LoginContainer'
             }
+            			// KEIN , KOMMA !!!!!
             
         ]
     },
  
     initialize: function() {
     	//debugger;
-        this.setActiveItem(0);
+        this.setActiveItem(4);
     }
 });
 

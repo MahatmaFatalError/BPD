@@ -10,14 +10,14 @@ Ext.define('MyApp.view.SettingsContainer',{         // alle Componenten mit IDs 
         },
         items:[{
     		xtype: 'list',
-    		itemTpl: ['{name}'],
+    		itemTpl: ['{projectName}'],
     		store: 'SystemStore',
     		flex: 1,
     		items:[{
     			xtype: 'titlebar',
     			docked: 'top',
     			ui: 'light',
-    			title: 'Systems',
+    			title: 'Projects',
     			items:[{
     				xtype: 'button',
     				//docked: 'left',
@@ -40,13 +40,38 @@ Ext.define('MyApp.view.SettingsContainer',{         // alle Componenten mit IDs 
     		
     		{
 				xtype: 'panel',
-				layout: 'fit',
+				//layout: 'fit',
 				flex: 2,
+				padding: 50,
 				items:[{
 					xtype: 'titlebar',
 					docked: 'top',
 					title: 'Settings'
-			}]}
+					
+				},
+				{
+					xtype: 'fieldset',
+					//margin: 50,
+			        items: [
+			            {
+			                xtype: 'textfield',
+			                name : 'name',
+			                label: 'System'
+			            },
+			            {
+			                xtype: 'textfield',
+			                name : 'hostName',
+			                label: 'Hostname'
+			            },
+			            {
+			                xtype: 'passwordfield',
+			                name : 'password',
+			                label: 'Password'
+			            }
+			        ]
+				}
+				]
+			}
     	]
 	}
 });

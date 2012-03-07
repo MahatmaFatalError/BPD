@@ -4,6 +4,15 @@ Ext.define('MyApp.model.System', {
         fields: [
             {
                 name: 'name'
+            },
+            {
+				name: 'hostName'
+			},
+			{
+				name: 'projectName'
+			},
+			{
+				name: 'password'
             }
         ]
     }

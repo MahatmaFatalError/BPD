@@ -3,27 +3,35 @@
 Ext.define('MyApp.controller.Controller', {
     extend: 'Ext.app.Controller',
     
+    
+    
     //models:[],
     //views:[];
-    views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer'],
+    //views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer'],
     
     config: {
+    	before:{
+    		onLoginTap: 'authenticate', 
+    	},
+    
         refs:{
             //todo
-            	Nav: '.Viewport',
-                SettingsButton: '#SettingBtn',
-                AddSystemButton: '#AddSystemBtn',
-                HomeButton: '#HomeBtn',
-                Menu: '#SzenarioList',
-                WelcomeTitle: '#WelcomeTitle',
-                ShortScenarioDescription: '#shortScenDesc',
-                DescButton: '#DescriptionBtn',
-                SteckBriefBackButton: '#SteckbriefBackBtn',
-                TempButton: '#tempBtn',						//Temp
-                SNPSteckbriefTitle: '#SNPSteckbriefTitle',
-                CustomerPBBContainer: '#CustomerPBBContainer',
-                SNPPBBContainer: '#SNPPBBContainer',
-                SteckbriefTabPanel: '#SteckbriefTabPanel',
+        	Nav: '.Viewport',
+        	LoginButton: '#loginBtn',
+            SettingsButton: '#SettingBtn',
+            AddSystemButton: '#AddSystemBtn',
+            HomeButton: '#HomeBtn',
+            Menu: '#SzenarioList',
+            WelcomeTitle: '#WelcomeTitle',
+            ShortScenarioDescription: '#shortScenDesc',
+            DescButton: '#DescriptionBtn',
+            SteckBriefBackButton: '#SteckbriefBackBtn',
+            TempButton: '#tempBtn',						//Temp
+            SNPSteckbriefTitle: '#SNPSteckbriefTitle',
+            CustomerPBBContainer: '#CustomerPBBContainer',
+            SNPPBBContainer: '#SNPPBBContainer',
+            SteckbriefTabPanel: '#SteckbriefTabPanel',
+            ScenarioOutlineTitleBar: '#ScenarioOutlineTitleBar',
                 
                                 // Components can be retrieved by using their xtype with an optional . prefix   .gridpanel
                                 // An itemId or id must be prefixed with a #                                    #myContainer
@@ -35,6 +43,11 @@ Ext.define('MyApp.controller.Controller', {
         
         control:{
             //todo
+            
+            LoginButton:{
+            	tap: 'onLoginTap'
+            },
+            
             SettingsButton:{
                 tap: 'goSettings'
             },
@@ -47,7 +60,7 @@ Ext.define('MyApp.controller.Controller', {
             },
             
             Menu:{
-            	itemtap: 'onItemTap'
+            	itemtap: 'onMenuItemTap'
             },
             
             DescButton:{
@@ -62,7 +75,7 @@ Ext.define('MyApp.controller.Controller', {
             	tap: 'onTempBtnTap',
             },
             SteckbriefTabPanel:{
-            	activeitemchange: 'onActiveitemchange',
+            	activeitemchange: 'onBBSOutlineActiveitemchange',
             },
             
             
@@ -81,6 +94,19 @@ Ext.define('MyApp.controller.Controller', {
 //    onSettingsButtonTap: function(){
         //this.getSettingsButton()   falsch
 //    },
+
+
+	authenticate: function(action){					// Funzt nicht!!!!
+		console.log('Login');
+		debugger;
+		action.resume();
+	},
+	
+
+	onLoginTap: function(){
+		this.getNav().setActiveItem(0)
+	},
+
     
     goSettings: function(){
         console.log('Settings pressed');
@@ -99,9 +125,9 @@ Ext.define('MyApp.controller.Controller', {
         //todo popup
     },
     
-    onItemTap: function(list,index,target,record){		
+    onMenuItemTap: function(list,index,target,record){		
     	console.log('item tapped: ' + record.getSelectedName());
-		console.log('item tapped: ' + record.getSelectedDesc());
+		//console.log('item tapped: ' + record.getSelectedDesc());
     	this.getWelcomeTitle().setTitle(record.getSelectedName());
     	this.getShortScenarioDescription().setHtml(record.getSelectedDesc());  
     	
@@ -112,7 +138,11 @@ Ext.define('MyApp.controller.Controller', {
     
     
     onDescBtnTap: function(){
+    	var selectedItem = this.getMenu().getSelection(); 
+    	
+    	//console.log(selectedItem[0].getSelectedName());
     	console.log('DescButton tapped');
+    	this.getScenarioOutlineTitleBar().setTitle(selectedItem[0].getSelectedName());
     	this.getNav().setActiveItem(3);
     },
     
@@ -130,8 +160,8 @@ Ext.define('MyApp.controller.Controller', {
         //};
     },
     
-    onActiveitemchange:function(container, newActivePanel, oldPanel){
-
+    
+    onBBSOutlineActiveitemchange:function(container, newActivePanel, oldPanel){
     	if(newActivePanel.getId() == "SNPPBBContainer"){
     		this.getSNPSteckbriefTitle().setTitle('SNP Process Building Block Outline');
     	} else if(newActivePanel.getId() == 'CustomerPBBContainer'){
