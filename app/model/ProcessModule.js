@@ -11,7 +11,7 @@ Ext.define('MyApp.model.ProcessModule', {
 });
 
 
-Ext.define('MyApp.model.ReferenceOutline', {
+Ext.define('ReferenceOutline', {
     extend: 'Ext.data.Model',
     config: {
         fields: ['description', 'steps', 'issues', 'improvements', 'others' ],
@@ -21,22 +21,22 @@ Ext.define('MyApp.model.ReferenceOutline', {
 });
 
 
-Ext.define('MyApp.model.CustomerOutline', {
+Ext.define('CustomerOutline', {
     extend: 'Ext.data.Model',
     config: {
         fields: ['description', 'steps', 'inputs', 'outputs'], //Steps, inputs, outputs in Array packen!?
-        hasMany: {model: 'MyApp.model.KPI', name: 'kpi'},
+        hasMany: {model: 'KPI', name: 'kpi'},
         belongsTo: 'MyApp.model.ProcessModule',
         
     }
 });
 
 
-Ext.define('MyApp.model.KPI', {
+Ext.define('KPI', {
     extend: 'Ext.data.Model',
     config: {
         fields: ['name', 'unit', 'value' ],
-        belongsTo: 'MyApp.model.CustomerOutline',			
+        belongsTo: 'CustomerOutline',			
     }
 });
 
