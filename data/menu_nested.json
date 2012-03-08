@@ -1,0 +1,19 @@
+{name:"Menu",
+ items:[
+ 	{
+ 	 name:"SNP Content",
+	 items:[
+		{"name":"Travel Management", "desc": "Beschreibung von Travel Management", leaf: true},
+		{"name":"Payroll", "desc": "Beschreibung von Payroll", leaf: true},
+		{"name":"Order-to-Cash", "desc": "Beschreibung von Order-to-Cash", leaf: true},
+		{"name":"Order-to-Cash mit Rahmenvertrag", "desc": "Beschreibung von OtC", leaf: true},
+		{"name":"Purchase-to-Pay", "desc": "Beschreibung von Purchase-to-Pay", leaf: true},
+		{"name":"Customer Service", "desc": "Beschreibung von Customer Service", leaf: true},
+		{"name":"Product Planning", "desc": "Beschreibung von Product Planning", leaf: true},
+		{"name":"Plant Maintenance", "desc": "Beschreibung von Plant Maintenance", leaf: true}
+	]},{
+	 name:"Customer",
+	 items:[
+
+	]}
+]}
