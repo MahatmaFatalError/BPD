@@ -20,6 +20,7 @@ Ext.define('MyApp.controller.Controller', {
         	LoginButton: '#loginBtn',
             SettingsButton: '#SettingBtn',
             AddSystemButton: '#AddSystemBtn',
+            AddSzenarioBtn: '#AddSzenarioBtn',
             HomeButton: '#HomeBtn',
             Menu: '#SzenarioList',
             WelcomeTitle: '#WelcomeTitle',
@@ -60,7 +61,9 @@ Ext.define('MyApp.controller.Controller', {
             },
             
             Menu:{
-            	itemtap: 'onMenuItemTap'
+            	itemtap: 'onMenuItemTap',
+            	leafitemtap: 'onLeafItemTap',
+            	back: 'back',
             },
             
             DescButton:{
@@ -125,17 +128,45 @@ Ext.define('MyApp.controller.Controller', {
         //todo popup
     },
     
-    onMenuItemTap: function(list,index,target,record){		
-    	console.log('item tapped: ' + record.getSelectedName());
+    onMenuItemTap: function(nestedlist, list,index,target,record){		
+    	//console.log('item tapped: ' + record.getSelectedName());
+		//console.log('item tapped: ' + record.getSelectedDesc());
+    	this.getWelcomeTitle().setTitle(record.getSelectedName());
+    	this.getShortScenarioDescription().setHtml(record.getSelectedDesc());  
+    	
+
+    	
+    	if(record.getSelectedName() == 'Customer'){
+    		this.getSettingsButton().setHidden(true);
+    		this.getAddSzenarioBtn().setHidden(false);
+    	} else {
+    		this.getSettingsButton().setHidden(false);
+    		this.getAddSzenarioBtn().setHidden(true);
+    	
+    	}
+    	
+    	//TODO 	
+    },
+    
+    onLeafItemTap: function(nestedlist, list,index,target,record){		
+    	//console.log('item tapped: ' + record.getSelectedName());
 		//console.log('item tapped: ' + record.getSelectedDesc());
     	this.getWelcomeTitle().setTitle(record.getSelectedName());
     	this.getShortScenarioDescription().setHtml(record.getSelectedDesc());  
     	
     	this.getDescButton().setHidden(false);
-    	
+    	    	
     	//TODO 	
     },
     
+    back: function(nestedlist, node, lastActiveList, detailCardActive){
+    	this.getSettingsButton().setHidden(false);
+    	this.getAddSzenarioBtn().setHidden(true);
+    	this.getDescButton().setHidden(false);
+    	this.getWelcomeTitle().setTitle('Welcome to SNP Business Process Designer');
+    	this.getShortScenarioDescription().setHtml('');
+    	
+    },
     
     onDescBtnTap: function(){
     	var selectedItem = this.getMenu().getSelection(); 

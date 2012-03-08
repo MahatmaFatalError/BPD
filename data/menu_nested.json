@@ -1,7 +1,7 @@
 {name:"Menu",
  items:[
  	{
- 	 name:"SNP Content",
+ 	 name:"SNP Content", "desc": "Default business process templates provided by SNP and its partners. Suitable for most of your business processes",
 	 items:[
 		{"name":"Travel Management", "desc": "Beschreibung von Travel Management", leaf: true},
 		{"name":"Payroll", "desc": "Beschreibung von Payroll", leaf: true},
@@ -12,7 +12,7 @@
 		{"name":"Product Planning", "desc": "Beschreibung von Product Planning", leaf: true},
 		{"name":"Plant Maintenance", "desc": "Beschreibung von Plant Maintenance", leaf: true}
 	]},{
-	 name:"Customer",
+	 name:"Customer", "desc": "Your personal business specific processes",
 	 items:[
 
 	]}
