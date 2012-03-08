@@ -36,7 +36,8 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
     					id: 'AddSzenarioBtn',
     					iconCls: 'add',
     					iconMask: true,
-    					align: 'right'
+    					align: 'right',
+    					hidden: true
                 	},
                 	{
                 		xtype: 'button',
@@ -44,7 +45,7 @@ Ext.define('MyApp.view.MenuContainer',{         // alle Componenten mit IDs vers
 	                    text: 'Settings',
 	                    iconCls: 'settings',
 	                    iconMask: true,
-	                    align: 'left',
+	                    align: 'right',
                 	}
                 	]
                 },{

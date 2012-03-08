@@ -22,6 +22,13 @@ Ext.define('MyApp.view.LoginContainer',{         // alle Componenten mit IDs ver
 	                xtype: 'passwordfield',
 	                name : 'password',
 	                label: 'Password'
+	            },
+	            {
+	            	xtype: 'textfield',
+	                name : 'project',
+	                label: 'Project',
+	                placeHolder:'(optional)'
+	            
 	            }
 	        ]
     	},

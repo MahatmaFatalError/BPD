@@ -170,16 +170,30 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
             		id:'CustomerPBBContainer',
             		scrollable: true,
             		items:[{
-            			xtype: 'label',
-            			id: 'CustomerDefinitionLabel',
-    					html: 'Short definition: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla',
-    					padding: 15,
+            			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
+				        title: 'Definition',
+				        margin: 15,
+            			items: [{
+            				xtype: 'textfield',
+	            			id: 'CustomerDefinitionTextfield',
+	    					placeHolder: 'Short definition: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla',	//Todo
+	    					//padding: 15,
+	    					margin: 15,
+            			}],
             		},
             		{
-            			xtype: 'label',
-            			id: 'CustomerDescriptionLabel',
-    					html: 'Short description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam ',
-    					padding: 15,
+            			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
+				        title: 'Description',
+				        margin: 15,
+            			items: [{
+            				xtype: 'textareafield',
+	            			id: 'CustomerDescriptionTextArea',
+	            			
+	    					placeHolder: 'Short description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam ',		//Todo
+	    					//padding: 15,
+	    					margin: 15,
+            			}],
+            			
             		
             		},
             		
@@ -205,7 +219,7 @@ Ext.define('MyApp.view.SteckbriefContainer',{         // alle Componenten mit ID
             			}]
             		},{
             			xtype: 'fieldset',					// TODO: Anzahl der Fieldset Einträge dynamisch ermitteln!
-				        title: 'Issues',
+				        title: 'Possible improvements',
 				        margin: 15,
 				        
 				        items:[{
