@@ -10,13 +10,13 @@ Ext.define('MyApp.model.Scenario', {
         	
        	],
        	
-       	hasMany:{model: 'MyApp.model.ProcessModules', name: 'processModules'},
+       	hasMany:{model: 'ProcessModules', name: 'processModules'},
     },
     
 });
 
 
-Ext.define('MyApp.model.ProcessModules', {												//reduntant zu MyApp.model.ProcessModulesHeaders ?
+Ext.define('ProcessModules', {												//reduntant zu MyApp.model.ProcessModulesHeaders ?
     extend: 'Ext.data.Model',
     config: {
         fields: [
@@ -28,7 +28,7 @@ Ext.define('MyApp.model.ProcessModules', {												//reduntant zu MyApp.model
             {name: 'customer',    type: 'boolean', defaultValue: false}	
         ],
         
-        hasMany:{model: 'MyApp.model.ProcessModuleSuccessor', name: 'output'},       
+        hasMany:{model: 'ProcessModuleSuccessor', name: 'output'},       
         
         belongsTo: 'MyApp.model.Szenario',
         
@@ -37,11 +37,11 @@ Ext.define('MyApp.model.ProcessModules', {												//reduntant zu MyApp.model
 
 
 
-Ext.define('MyApp.model.ProcessModuleSuccessor', {
+Ext.define('ProcessModuleSuccessor', {
     extend: 'Ext.data.Model',
     config: {
         fields: ['id' ],
-        belongsTo: 'MyApp.model.ProcessModules',
+        belongsTo: 'ProcessModules',
         
     }
 });
