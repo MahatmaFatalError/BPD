@@ -23,8 +23,8 @@
 					name: <process module name>,
 					x: <process module x-position>,
 					y: <process module y-position>,
-					type: <type of process module (SAP, non-SAP)>,
-					customer: <true or false>,
+					type: <type of process module (SAP, non-SAP)>,		//in sap: true false aendern
+					customer: <true or false>,			
 					outputs: [
 						<id of the successor process module #1>,
 						<id of the successor process module #2>,

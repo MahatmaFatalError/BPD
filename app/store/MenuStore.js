@@ -15,6 +15,9 @@ Ext.define('MyApp.store.MenuStore', {
             reader: {
                 type: 'json'
                 
+            }, 
+            writer: {
+            	type: 'json'
             }
         }
         
