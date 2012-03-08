@@ -8,6 +8,7 @@ Ext.define('MyApp.controller.Controller', {
     //models:[],
     //views:[];
     //views:['Viewport', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer'],
+    //stores:['MenuStore', 'SystemStore'],
     
     config: {
     	before:{
@@ -64,6 +65,10 @@ Ext.define('MyApp.controller.Controller', {
             	itemtap: 'onMenuItemTap',
             	leafitemtap: 'onLeafItemTap',
             	back: 'back',
+            },
+            
+            AddSzenarioBtn:{
+            	tap: 'onAddSzenarioBtnTap'
             },
             
             DescButton:{
@@ -165,6 +170,18 @@ Ext.define('MyApp.controller.Controller', {
     	this.getDescButton().setHidden(false);
     	this.getWelcomeTitle().setTitle('Welcome to SNP Business Process Designer');
     	this.getShortScenarioDescription().setHtml('');
+    	
+    },
+    
+    onAddSzenarioBtnTap: function(){
+    	Ext.Msg.prompt('Name', 'Please enter a name for the new business process:', function(btn, text) {
+    		if(btn == 'ok'){
+            	//console.log(text);
+            	Ext.getStore('MenuStore').add({name: text});
+            	Ext.getStore('MenuStore').sync();
+         	}
+		});
+    	
     	
     },
     
