@@ -1,24 +1,7 @@
 Ext.define('MyApp.model.Menu', {
     extend: 'Ext.data.Model',
     config: {
-        fields: [
-            {
-                name: 'name'
-            },
-            {
-            	name: 'desc'
-            }
-        ],
-    
-    
-    	// ==> BelongsTo Association
-    	//belongsTo:[{},{}],
-    
-    
-   		// ==> HasOne oder HasMany Association
-    	//hasMany:{}
-    
-    
+        fields: ['name', 'desc']
     },
     
     getSelectedName: function(){

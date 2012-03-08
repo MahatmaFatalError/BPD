@@ -5,9 +5,9 @@ Ext.application({
 
 //    requieres:['MyApp.model.Menu','MyApp.store.MenuStore'],
     //    profiles: ['Tablet'];
-    models:['Menu', 'System'],
-    stores:['MenuStore', 'SystemStore'],
-    views:['LoginContainer', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer', 'SzenarioSteckbriefContainer', 'Viewport', ],		//'temp'],
+    models:['Menu', 'System','ProcessModuleHeaders','ProcessModulesHeaders','ProcessModule','ReferenceOutline','CustomerOutline','KPI','ScenarioHeader','Scenario','ProcessModules','ProcessModuleSuccessor'],
+    stores:['MenuStore', 'SystemStore','ProcessModulesStore','ProcessModuleHeadersStore','ScenarioHeaderStore', 'ScenarioStore'],
+    views:['LoginContainer', 'MenuContainer', 'SettingsContainer', 'SteckbriefContainer', 'SzenarioSteckbriefContainer', 'Viewport', ],		
     controllers:['Controller'],
 
     launch: function(){
