@@ -26,8 +26,8 @@
 					type: <type of process module (SAP, non-SAP)>,		//in sap: true false aendern
 					customer: <true or false>,			
 					outputs: [
-						<id of the successor process module #1>,
-						<id of the successor process module #2>,
+						id: <id of the successor process module #1>,
+						id: <id of the successor process module #2>,
 						...
 					]
 				}, ...
@@ -68,8 +68,8 @@
 			referenceOutline: {
 				description: <long description>,
 				steps: [
-					<text1>,
-					<text2>,
+					step: <text1>,
+					step: <text2>,
 					...
 				],
 				kpis: [
@@ -80,13 +80,13 @@
 					}
 				],
 				inputs: [
-					<text1>,
-					<text2>,
+					input: <text1>,
+					input: <text2>,
 					...
 				],
 				outputs: [
-					<text1>,
-					<text2>,
+					output: <text1>,
+					output: <text2>,
 					...
 				]
 			}
