@@ -48,3 +48,7 @@ Ext.define('KPI', {
 //            autoLoad: true,
 //            associationKey: 'child_groups' // read child data from child_groups
 //        }]
+
+
+
+//automatische getter generierung?
