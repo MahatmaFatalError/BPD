@@ -40,3 +40,11 @@ Ext.define('KPI', {
     }
 });
 
+//associations: [{
+//            type: 'hasMany',					//belongsTo
+//            model: 'MyApp.model.Group',
+//            primaryKey: 'id',
+//            foreignKey: 'parent_id',
+//            autoLoad: true,
+//            associationKey: 'child_groups' // read child data from child_groups
+//        }]
