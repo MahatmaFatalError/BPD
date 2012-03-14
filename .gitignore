@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /touch
 /app/.DS_Store
 /.DS_Store
@@ -7,3 +8,15 @@ app/.DS_Store
 
 .DS_Store
 /nbproject/private/
+=======
+/touch
+/app/.DS_Store
+/.DS_Store
+app/view/.DS_Store
+
+app/.DS_Store
+
+.DS_Store
+
+.DS_Store
+>>>>>>> gitignore update
