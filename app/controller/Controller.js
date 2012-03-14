@@ -224,4 +224,6 @@ Ext.define('MyApp.controller.Controller', {
     //        var detailCard = nestedList.getDetailCard();
     //        detailCard.setHtml('You selected: ' + record.get('text'));
     //    }
+    
+    //Test
 });
