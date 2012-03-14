@@ -165,9 +165,10 @@ Ext.define('MyApp.controller.Controller', {
     },
     
     back: function(nestedlist, node, lastActiveList, detailCardActive){
+    	console.log('back tapped');
     	this.getSettingsButton().setHidden(false);
     	this.getAddSzenarioBtn().setHidden(true);
-    	this.getDescButton().setHidden(false);
+    	this.getDescButton().setHidden(true);
     	this.getWelcomeTitle().setTitle('Welcome to SNP Business Process Designer');
     	this.getShortScenarioDescription().setHtml('');
     	
@@ -175,8 +176,8 @@ Ext.define('MyApp.controller.Controller', {
     
     onAddSzenarioBtnTap: function(){
     	Ext.Msg.prompt('Name', 'Please enter a name for the new business process:', function(btn, text) {
-    		if(btn == 'ok'){
-            	//console.log(text);
+    		if(btn == 'ok'){		//TODO: doesn't work
+            	console.log(text);
             	Ext.getStore('MenuStore').add({name: text});
             	Ext.getStore('MenuStore').sync();
          	}
@@ -186,9 +187,11 @@ Ext.define('MyApp.controller.Controller', {
     },
     
     onDescBtnTap: function(){
-    	var selectedItem = this.getMenu().getSelection(); 
-    	
-    	//console.log(selectedItem[0].getSelectedName());
+    	var innerList = this.getMenu().getInnerItems();		//innere Listen beschafen
+    	var selectedItem = innerList[1].getSelection(); 	//Selection der Liste aus der 2. Ebene beschaffen			
+    	//console.log(this.getMenu());
+    	//console.log(this.getMenu().getInnerItems());
+    	console.log(selectedItem[0].getSelectedName());
     	console.log('DescButton tapped');
     	this.getScenarioOutlineTitleBar().setTitle(selectedItem[0].getSelectedName());
     	this.getNav().setActiveItem(3);
